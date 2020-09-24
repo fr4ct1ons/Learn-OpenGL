@@ -1,0 +1,5 @@
+# ninja log v5
+2	800	622609618	TestingProject/CMakeFiles/TestingProject.dir/main.cpp.obj	3bcd86f752712290
+2	1018	622610460	TestingProject/CMakeFiles/glad.dir/__/Global_Sources/glad.c.obj	e1846a07cf096c5e
+3	200	622610628	TestingProject/glad.lib	16be36a69443d505
+200	2153	622610630	TestingProject/TestingProject.exe	ed1c17e24740ed49
