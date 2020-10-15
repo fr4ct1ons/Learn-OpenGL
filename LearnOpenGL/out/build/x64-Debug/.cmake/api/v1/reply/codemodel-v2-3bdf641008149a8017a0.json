@@ -28,8 +28,7 @@
 					"source" : "TestingProject",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -45,8 +44,7 @@
 					"name" : "LearnOpenGL",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -55,15 +53,8 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "TestingProject::@72dff16952a89fcdcb7c",
-					"jsonFile" : "target-TestingProject-Debug-e3e47663683e3bb072bc.json",
+					"jsonFile" : "target-TestingProject-Debug-01cc25bd828c50889dbd.json",
 					"name" : "TestingProject",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 1,
-					"id" : "glad::@72dff16952a89fcdcb7c",
-					"jsonFile" : "target-glad-Debug-26b632431a4c276e5e1e.json",
-					"name" : "glad",
 					"projectIndex" : 0
 				}
 			]
@@ -72,7 +63,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug (default)",
+		"build" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug",
 		"source" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL"
 	},
 	"version" : 

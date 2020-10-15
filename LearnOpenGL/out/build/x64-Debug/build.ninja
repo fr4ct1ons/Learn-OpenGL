@@ -39,7 +39,7 @@ include rules.ninja
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug (default)" && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -50,7 +50,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug (default)" && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\Lucena\Documents\VisualStudio\LearnOpenGL -B"D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug (default)""
+  COMMAND = cmd.exe /C "cd /D D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\Lucena\Documents\VisualStudio\LearnOpenGL -BD:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -67,7 +67,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # Utility command for edit_cache
 
 build TestingProject\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug (default)\TestingProject" && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug\TestingProject && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -80,13 +80,29 @@ build TestingProject\edit_cache: phony TestingProject\CMakeFiles\edit_cache.util
 #############################################
 # Order-only phony target for TestingProject
 
-build cmake_object_order_depends_target_TestingProject_Debug: phony || cmake_object_order_depends_target_glad_Debug
+build cmake_object_order_depends_target_TestingProject_Debug: phony || TestingProject\CMakeFiles\TestingProject.dir
 
 build TestingProject\CMakeFiles\TestingProject.dir\main.cpp.obj: CXX_COMPILER__TestingProject_Debug ..\..\..\TestingProject\main.cpp || cmake_object_order_depends_target_TestingProject_Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   INCLUDES = -I..\..\..\Global_Include
   OBJECT_DIR = TestingProject\CMakeFiles\TestingProject.dir
   OBJECT_FILE_DIR = TestingProject\CMakeFiles\TestingProject.dir
+  TARGET_COMPILE_PDB = TestingProject\CMakeFiles\TestingProject.dir\
+  TARGET_PDB = TestingProject\TestingProject.pdb
+
+build TestingProject\CMakeFiles\TestingProject.dir\__\Global_Sources\Shader.cpp.obj: CXX_COMPILER__TestingProject_Debug ..\..\..\Global_Sources\Shader.cpp || cmake_object_order_depends_target_TestingProject_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\Global_Include
+  OBJECT_DIR = TestingProject\CMakeFiles\TestingProject.dir
+  OBJECT_FILE_DIR = TestingProject\CMakeFiles\TestingProject.dir\__\Global_Sources
+  TARGET_COMPILE_PDB = TestingProject\CMakeFiles\TestingProject.dir\
+  TARGET_PDB = TestingProject\TestingProject.pdb
+
+build TestingProject\CMakeFiles\TestingProject.dir\__\Global_Sources\glad.c.obj: C_COMPILER__TestingProject_Debug ..\..\..\Global_Sources\glad.c || cmake_object_order_depends_target_TestingProject_Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -I..\..\..\Global_Include
+  OBJECT_DIR = TestingProject\CMakeFiles\TestingProject.dir
+  OBJECT_FILE_DIR = TestingProject\CMakeFiles\TestingProject.dir\__\Global_Sources
   TARGET_COMPILE_PDB = TestingProject\CMakeFiles\TestingProject.dir\
   TARGET_PDB = TestingProject\TestingProject.pdb
 
@@ -98,59 +114,25 @@ build TestingProject\CMakeFiles\TestingProject.dir\main.cpp.obj: CXX_COMPILER__T
 #############################################
 # Link the executable TestingProject\TestingProject.exe
 
-build TestingProject\TestingProject.exe: CXX_EXECUTABLE_LINKER__TestingProject_Debug TestingProject\CMakeFiles\TestingProject.dir\main.cpp.obj | ..\..\..\Global_Libraries\glfw3.lib TestingProject\glad.lib || TestingProject\glad.lib
+build TestingProject\TestingProject.exe: CXX_EXECUTABLE_LINKER__TestingProject_Debug TestingProject\CMakeFiles\TestingProject.dir\main.cpp.obj TestingProject\CMakeFiles\TestingProject.dir\__\Global_Sources\Shader.cpp.obj TestingProject\CMakeFiles\TestingProject.dir\__\Global_Sources\glad.c.obj | ..\..\..\Global_Libraries\glfw3.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = ..\..\..\Global_Libraries\glfw3.lib  TestingProject\glad.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = ..\..\..\Global_Libraries\glfw3.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_PATH = -LIBPATH:D:\Lucena\Documents\VisualStudio\LearnOpenGL\Global_Libraries
   OBJECT_DIR = TestingProject\CMakeFiles\TestingProject.dir
-  POST_BUILD = cd .
+  POST_BUILD = cmd.exe /C "cd /D D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug\TestingProject && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_directory D:/Lucena/Documents/VisualStudio/LearnOpenGL/Resources/ D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug/TestingProject/Resources"
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = TestingProject\CMakeFiles\TestingProject.dir\
   TARGET_FILE = TestingProject\TestingProject.exe
   TARGET_IMPLIB = TestingProject\TestingProject.lib
   TARGET_PDB = TestingProject\TestingProject.pdb
 
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target glad
-
-
-#############################################
-# Order-only phony target for glad
-
-build cmake_object_order_depends_target_glad_Debug: phony || TestingProject\CMakeFiles\glad.dir
-
-build TestingProject\CMakeFiles\glad.dir\__\Global_Sources\glad.c.obj: C_COMPILER__glad_Debug ..\..\..\Global_Sources\glad.c || cmake_object_order_depends_target_glad_Debug
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  INCLUDES = -I..\..\..\Global_Include
-  OBJECT_DIR = TestingProject\CMakeFiles\glad.dir
-  OBJECT_FILE_DIR = TestingProject\CMakeFiles\glad.dir\__\Global_Sources
-  TARGET_COMPILE_PDB = TestingProject\CMakeFiles\glad.dir\glad.pdb
-  TARGET_PDB = TestingProject\glad.pdb
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target glad
-
-
-#############################################
-# Link the static library TestingProject\glad.lib
-
-build TestingProject\glad.lib: C_STATIC_LIBRARY_LINKER__glad_Debug TestingProject\CMakeFiles\glad.dir\__\Global_Sources\glad.c.obj
-  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  LINK_FLAGS = /machine:x64
-  OBJECT_DIR = TestingProject\CMakeFiles\glad.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = TestingProject\CMakeFiles\glad.dir\glad.pdb
-  TARGET_FILE = TestingProject\glad.lib
-  TARGET_PDB = TestingProject\glad.pdb
-
 
 #############################################
 # Utility command for rebuild_cache
 
 build TestingProject\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug (default)\TestingProject" && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\Lucena\Documents\VisualStudio\LearnOpenGL -B"D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug (default)""
+  COMMAND = cmd.exe /C "cd /D D:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug\TestingProject && "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\Lucena\Documents\VisualStudio\LearnOpenGL -BD:\Lucena\Documents\VisualStudio\LearnOpenGL\out\build\x64-Debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -164,26 +146,22 @@ build TestingProject: phony TestingProject\TestingProject.exe
 
 build TestingProject.exe: phony TestingProject\TestingProject.exe
 
-build glad: phony TestingProject\glad.lib
-
-build glad.lib: phony TestingProject\glad.lib
-
 # =============================================================================
 # Folder targets.
 
 # =============================================================================
 
 #############################################
-# Folder: D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug (default)
+# Folder: D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug
 
 build all: phony TestingProject\all
 
 # =============================================================================
 
 #############################################
-# Folder: D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug (default)/TestingProject
+# Folder: D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug/TestingProject
 
-build TestingProject\all: phony TestingProject\TestingProject.exe TestingProject\glad.lib
+build TestingProject\all: phony TestingProject\TestingProject.exe
 
 # =============================================================================
 # Built-in targets

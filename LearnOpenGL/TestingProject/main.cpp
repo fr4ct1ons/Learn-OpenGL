@@ -2,7 +2,9 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+
 #include "ConstantShaders.h"
+#include "Shader.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -26,8 +28,12 @@ bool isKeyPressed(GLFWwindow* window, int key)
     return false;
 }
 
-int main(void)
+int main(int argc, char* argv[])
 {
+    if (argc > 1)
+    {
+        std::cout << argv[1] << std::endl;
+    }
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -110,17 +116,17 @@ int main(void)
         std::cout << "ERROR COMPILING SHADER PROGRAM! Error log: \n" << infoLog << std::endl;
     }
 
-    unsigned int shaderProgram2;
-    shaderProgram2 = glCreateProgram();
-    glAttachShader(shaderProgram2, vertexShader);
-    glAttachShader(shaderProgram2, fragmentShader2);
-    glLinkProgram(shaderProgram2);
+    unsigned int shaderProgramPurple;
+    shaderProgramPurple = glCreateProgram();
+    glAttachShader(shaderProgramPurple, vertexShader);
+    glAttachShader(shaderProgramPurple, fragmentShader2);
+    glLinkProgram(shaderProgramPurple);
 
-    glGetProgramiv(shaderProgram2, GL_COMPILE_STATUS, &success);
+    glGetProgramiv(shaderProgramPurple, GL_COMPILE_STATUS, &success);
 
     if (success == 0)
     {
-        glGetProgramInfoLog(shaderProgram2, 512, NULL, infoLog);
+        glGetProgramInfoLog(shaderProgramPurple, 512, NULL, infoLog);
         std::cout << "ERROR COMPILING SHADER PROGRAM2! Error log: \n" << infoLog << std::endl;
     }
 
@@ -129,10 +135,11 @@ int main(void)
     glDeleteShader(fragmentShader2);
 
     float vertices[] = {
-         0.5f,  0.5f, 0.0f,  // top right
-         0.5f, -0.5f, 0.0f,  // bottom right
-        -0.5f, -0.5f, 0.0f,  // bottom left
-        -0.5f,  0.5f, 0.0f   // top left 
+        // positions            // colors
+         0.5f,  0.5f, 0.0f,     1.0f, 0.0f, 0.0f, // top right
+         0.5f, -0.5f, 0.0f,     0.0f, 1.0f, 0.0f, // bottom right
+        -0.5f, -0.5f, 0.0f,     0.0f, 0.0f, 1.0f,  // bottom left
+        -0.5f,  0.5f, 0.0f,     1.0f, 1.0f, 1.0f   // top left 
     };
 
     unsigned int indices[] = {
@@ -157,8 +164,11 @@ int main(void)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3*sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -196,6 +206,13 @@ int main(void)
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
+    float time = glfwGetTime();
+    float greenValue = (std::sin(time) / 2.0f) + 0.5f;
+    int vertexOurColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+    glUniform4f(vertexOurColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+    
+    Shader testShader("TestVertex.vert", "TestFrag.frag", "TestingShader");
+
     while (!glfwWindowShouldClose(window))
     {
         processInput(window);
@@ -223,11 +240,19 @@ int main(void)
         glClearColor(r, g, b, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUseProgram(shaderProgram);
+        //glUseProgram(shaderProgram);
+        testShader.SetAsCurrent();
+
+        /*float time = glfwGetTime();
+        float greenValue = (std::sin(time * 5.0f) / 2.0f) + 0.5f;
+        int vertexOurColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+        glUniform4f(vertexOurColorLocation, 0.0f, greenValue, 0.0f, 1.0f);*/
+
+        
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, sizeof(indices), GL_UNSIGNED_INT, 0);
 
-        glUseProgram(shaderProgram2);
+        glUseProgram(shaderProgramPurple);
         glBindVertexArray(VAO2);
         glDrawElements(GL_TRIANGLES, sizeof(indices2), GL_UNSIGNED_INT, 0);
 

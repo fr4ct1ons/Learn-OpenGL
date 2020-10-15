@@ -1,0 +1,21 @@
+# ninja log v5
+2	420	623055617	TestingProject/CMakeFiles/TestingProject.dir/__/Global_Sources/glad.c.obj	fafe4672040846c9
+8	492	623055617	TestingProject/CMakeFiles/TestingProject.dir/main.cpp.obj	3bcd86f752712290
+13	525	623055617	TestingProject/CMakeFiles/TestingProject.dir/__/Global_Sources/Shader.cpp.obj	bf8ed95693f9a81d
+525	1377	623055618	TestingProject/TestingProject.exe	5c7d9ead39f04224
+3	855	624429374	TestingProject/CMakeFiles/TestingProject.dir/main.cpp.obj	3bcd86f752712290
+856	1554	624429375	TestingProject/TestingProject.exe	5c7d9ead39f04224
+2	608	624429461	TestingProject/CMakeFiles/TestingProject.dir/__/Global_Sources/Shader.cpp.obj	bf8ed95693f9a81d
+608	1194	624429462	TestingProject/TestingProject.exe	5c7d9ead39f04224
+3	536	624429682	TestingProject/CMakeFiles/TestingProject.dir/__/Global_Sources/Shader.cpp.obj	bf8ed95693f9a81d
+536	996	624429682	TestingProject/TestingProject.exe	5c7d9ead39f04224
+2	511	624429777	TestingProject/CMakeFiles/TestingProject.dir/main.cpp.obj	3bcd86f752712290
+512	967	624429777	TestingProject/TestingProject.exe	5c7d9ead39f04224
+2	471	624429820	TestingProject/CMakeFiles/TestingProject.dir/main.cpp.obj	3bcd86f752712290
+471	877	624429820	TestingProject/TestingProject.exe	5c7d9ead39f04224
+4	513	624429837	TestingProject/CMakeFiles/TestingProject.dir/__/Global_Sources/Shader.cpp.obj	bf8ed95693f9a81d
+514	995	624429837	TestingProject/TestingProject.exe	5c7d9ead39f04224
+4	528	624429860	TestingProject/CMakeFiles/TestingProject.dir/__/Global_Sources/Shader.cpp.obj	bf8ed95693f9a81d
+528	950	624429861	TestingProject/TestingProject.exe	5c7d9ead39f04224
+2	935	624430544	TestingProject/CMakeFiles/TestingProject.dir/__/Global_Sources/Shader.cpp.obj	bf8ed95693f9a81d
+935	1329	624430544	TestingProject/TestingProject.exe	5c7d9ead39f04224

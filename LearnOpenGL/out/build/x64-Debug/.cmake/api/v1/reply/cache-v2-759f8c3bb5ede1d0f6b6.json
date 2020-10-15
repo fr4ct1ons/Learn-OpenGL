@@ -23,7 +23,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug (default)"
+			"value" : "d:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -511,7 +511,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/install/x64-Debug (default)"
+			"value" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/install/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1035,7 +1035,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug (default)"
+			"value" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug"
 		},
 		{
 			"name" : "LearnOpenGL_SOURCE_DIR",

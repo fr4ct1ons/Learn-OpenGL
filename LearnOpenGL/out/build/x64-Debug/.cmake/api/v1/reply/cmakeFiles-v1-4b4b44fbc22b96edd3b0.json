@@ -6,7 +6,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeSystem.cmake"
+			"path" : "out/build/x64-Debug/CMakeFiles/3.17.20032601-MSVC_2/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -15,11 +15,11 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeCCompiler.cmake"
+			"path" : "out/build/x64-Debug/CMakeFiles/3.17.20032601-MSVC_2/CMakeCCompiler.cmake"
 		},
 		{
 			"isGenerated" : true,
-			"path" : "out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeCXXCompiler.cmake"
+			"path" : "out/build/x64-Debug/CMakeFiles/3.17.20032601-MSVC_2/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -73,7 +73,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "out/build/x64-Debug (default)/CMakeFiles/3.17.20032601-MSVC_2/CMakeRCCompiler.cmake"
+			"path" : "out/build/x64-Debug/CMakeFiles/3.17.20032601-MSVC_2/CMakeRCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -127,7 +127,7 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug (default)",
+		"build" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/out/build/x64-Debug",
 		"source" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL"
 	},
 	"version" : 
