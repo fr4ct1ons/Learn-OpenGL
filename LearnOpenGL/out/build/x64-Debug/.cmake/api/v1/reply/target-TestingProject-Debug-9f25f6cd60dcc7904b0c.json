@@ -66,7 +66,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/Global_Include"
+					"path" : "D:/Lucena/Documents/Repositories/Learn-OpenGL/LearnOpenGL/Global_Include"
 				}
 			],
 			"language" : "CXX",
@@ -87,7 +87,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "D:/Lucena/Documents/VisualStudio/LearnOpenGL/Global_Include"
+					"path" : "D:/Lucena/Documents/Repositories/Learn-OpenGL/LearnOpenGL/Global_Include"
 				}
 			],
 			"language" : "C",
@@ -112,7 +112,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LIBPATH:D:\\Lucena\\Documents\\VisualStudio\\LearnOpenGL\\Global_Libraries",
+				"fragment" : "-LIBPATH:D:\\Lucena\\Documents\\Repositories\\Learn-OpenGL\\LearnOpenGL\\Global_Libraries",
 				"role" : "libraryPath"
 			},
 			{

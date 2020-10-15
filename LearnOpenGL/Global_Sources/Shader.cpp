@@ -30,7 +30,7 @@ Shader::Shader(std::string vertexProgramPath, std::string fragmentProgramPath, s
 		std::stringstream vertexStream, fragmentStream;
 		vertexStream << vertexFile.rdbuf();
 		fragmentStream << fragmentFile.rdbuf();
-		std::cout << fragmentStream.str() << std::endl;
+		//std::cout << fragmentStream.str() << std::endl;
 
 		vertexCode = vertexStream.str();
 		fragmentCode = fragmentStream.str();
