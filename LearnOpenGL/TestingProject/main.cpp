@@ -220,6 +220,8 @@ int main(int argc, char* argv[])
     Shader testShader("Resources/TestVertex.vert", "Resources/TestFrag.frag", "TestingShader");
 
     /* --- LOADING TEXTURES --- */
+    
+    stbi_set_flip_vertically_on_load(true);
 
     int width, height, channelAmount;
     unsigned char* image = stbi_load("Resources/container.jpg", &width, &height, &channelAmount, 0);
@@ -244,6 +246,32 @@ int main(int argc, char* argv[])
     }
 
     stbi_image_free(image);
+
+    image = stbi_load("Resources/awesomeface.png", &width, &height, &channelAmount, 0);
+
+    unsigned int texture2;
+    glGenTextures(1, &texture2);
+
+    glBindTexture(GL_TEXTURE_2D, texture2);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    if (image)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    }
+    else
+    {
+        std::cout << "Failed to load texture" << std::endl;
+    }
+
+    testShader.SetAsCurrent();
+    testShader.SetInt("texture1", 0);
+    testShader.SetInt("texture2", 1);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -280,8 +308,11 @@ int main(int argc, char* argv[])
         int vertexOurColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
         glUniform4f(vertexOurColorLocation, 0.0f, greenValue, 0.0f, 1.0f);*/
 
-        
+        glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, texture2);
+
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, sizeof(indices), GL_UNSIGNED_INT, 0);
 
