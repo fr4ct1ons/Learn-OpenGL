@@ -4,6 +4,10 @@
 #include <fstream>
 #include <sstream>
 
+#include"glm/glm.hpp"
+#include"glm/gtc/type_ptr.hpp"
+#include"glm/mat4x4.hpp"
+
 class Shader
 {
 private:
@@ -26,5 +30,9 @@ public:
 	void SetFloat(const std::string& name, float value) const
 	{
 		glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
+	}
+	void SetMatrix(const std::string& name, glm::mat4 value)
+	{
+		glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 	}
 };
